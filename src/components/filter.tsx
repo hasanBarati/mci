@@ -1,3 +1,4 @@
+import { Children } from "react";
 import { Filter, PostDataType } from "../types";
 
 interface FilterProps {
@@ -73,8 +74,8 @@ export default function FilterTable({
         <div className="modal-content">
           <h2>Filter</h2>
           {filterData.map((filter, index) => (
-            <div className="flex items-center ">
-              <div key={index} className="filter-row">
+            <div key={index} className="flex items-center ">
+              <div className="filter-row">
                 <select
                   className=" "
                   value={filter.header}
@@ -83,9 +84,11 @@ export default function FilterTable({
                   }
                 >
                   <option value="">Select Header</option>
-                  {headers.map(({ header }) => (
-                    <option value={header}>{header}</option>
-                  ))}
+                  {Children.toArray(
+                    headers.map(({ header }) => (
+                      <option value={header}>{header}</option>
+                    ))
+                  )}
                 </select>
                 <select
                   value={filter.condition}

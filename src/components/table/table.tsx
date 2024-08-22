@@ -1,3 +1,4 @@
+import { Children } from "react";
 import { ApiStatus, PostDataType } from "../../types";
 import Loading from "../loading";
 import { TableColumns } from "./table-columns";
@@ -36,9 +37,9 @@ const Table = ({
       <table className="data-table">
         <thead>
           <tr>
-            {headers.map((header) => (
+            {Children.toArray( headers.map((header) => (
               <th>{header.header}</th>
-            ))}
+            )))}
           </tr>
         </thead>
         <tbody >
@@ -49,11 +50,11 @@ const Table = ({
               </td>
             </tr>
           ) : (
-            data.map((record, index) => (
-              <tr key={index}>
-                {headers.map((item) => (
+            data.map((record) => (
+              <tr key={record.id}>
+                {Children.toArray(headers.map((item) => (
                   <td>{record[item.header]}</td>
-                ))}
+                )))}
               </tr>
             ))
           )}
