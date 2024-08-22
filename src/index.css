@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+     select,input {
+         @apply  rounded-lg  row-start-1 col-start-1  bg-slate-200
+     }
+     body{
+        @apply overflow-hidden
+     }
+    
+   
+}
+@layer components {
+    .mainButton{
+        @apply rounded-lg border-2 bg-gray-300 hover:bg-gray-100
+    }
+    .filterButton{
+        @apply bg-[#87b7cb26]
+    }
+    .app {
+        @apply flex flex-col font-sans;
+      }
+      
+      .header {
+        @apply flex justify-between bg-gray-100 p-2.5 text-right;
+      }
+      
+      .user-button {
+        @apply px-2.5 py-1 cursor-pointer;
+      }
+      
+      .content {
+        @apply flex h-screen;
+      }
+      
+      .sidebar {
+        @apply w-52 bg-gray-200 p-5 shadow-md;
+      }
+      
+      .menu-item {
+        @apply mb-2.5 cursor-pointer;
+      }
+      
+      .table-container {
+        @apply flex-1 p-5 bg-white overflow-y-auto mb-16;
+      }
+      
+      .data-table {
+        @apply w-full border-collapse mb-5;
+      }
+      
+      .data-table th, .data-table td {
+        @apply border border-gray-300 p-2 text-left;
+      }
+      
+      .pagination {
+        @apply flex justify-between items-center;
+      }
+      
+      .filter-button {
+        @apply p-2.5 cursor-pointer;
+      }
+      .modal {
+        @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-5 shadow-lg z-[1000];
+      }
+      
+      .modal-content {
+        @apply flex flex-col gap-y-4;
+      }
+      
+      .filter-row {
+        @apply flex justify-between ;
+      }
+      
+      .filter-row select,
+      .filter-row input {
+        @apply mr-2.5 p-1.5;
+      }
+      
+      .filter-row button {
+        @apply p-1.5 cursor-pointer;
+      }
+      
+      .modal-actions {
+        @apply flex justify-between mt-5;
+      }
+      
+      .modal-actions button {
+        @apply px-5 py-2.5 cursor-pointer;
+      }
+}
